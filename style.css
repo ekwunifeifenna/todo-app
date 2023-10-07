@@ -51,7 +51,7 @@ header{
 main{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 24px;
     flex: 1;   /* This lets the main tag take as much space of the parent container as possible, makes the footer go to the bottom of the page */
 }
 
@@ -69,12 +69,14 @@ main{
 #writeTodo input{
     background: transparent;
     outline: none;
-    padding: 4px 8px;
-    color: white;
+    padding: 12px;
+    color: purple;
     flex: 1;  /*The input will take majority of the space*/
     border: none;
    
 }
+
+
 
 #writeTodo form{
     display: flex;
@@ -83,17 +85,73 @@ main{
 
 }
 
+#writeTodo form:focus-within {
+    border-color: rgb(209, 67, 209);
+}
+
 #writeTodo button{
     background: purple;
     color: white;
     border: none;
     outline: none;
-    padding: 0 8px;
+    padding: 0 12px;
     font-family: 'Young Serif', sans-serif;
     cursor: pointer;
+    /* position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%; */
+}
+
+
+#writeTodo{
+    display: none;
 }
 
 #writeTodo button:hover{
     background: transparent;
     color: purple;
 }
+
+
+/* The actual todos */
+#todos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.todoItem{
+    display: flex;
+}
+
+.todoItem p{
+    flex: 1;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* Putting the i makes sure that only the one that is hovered over changes colour */
+.actions i:hover{
+    color: purple;
+
+}
+
+footer{
+    display: grid;
+    place-items: center;
+}
+
+footer i {
+    cursor: pointer;
+}
+
+footer i:hover{
+    color: purple;
+}
+
